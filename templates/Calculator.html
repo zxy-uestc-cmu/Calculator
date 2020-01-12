@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sherry's Calculator</title>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'calculator.css' %}"/>
+</head>
+<body>
+    <h1>
+        Sherry's Calculator
+    </h1>
+    <h2 class='error'>
+        {{ error }}
+    </h2>
+    <div class="result">
+        {{ number }}
+    </div>
+    <div class="cal">
+    <form action="/" method="POST">
+        {% csrf_token %} 
+        <input name="sym" type="hidden" value={{ sym }}>
+        <input name="data1" type="hidden" value={{ data1 }}>
+        <input name="data2" type="hidden" value={{ data2 }}>
+        <div class="cal">
+        <input class="cal_number" name="digit" type="submit" value="7">    
+        <input class="cal_number" name="digit" type="submit" value="8">
+         <input class="cal_number" name="digit" type="submit" value="9">                            
+        <input class="cal_opration" name="symbol" type="submit" value="&minus;">
+        </div>  
+        <div class = "cal">                                           
+            <input class="cal_number" name="digit" type="submit" value="4">                             
+            <input class="cal_number" name="digit" type="submit" value="5">                                              
+            <input class="cal_number" name="digit" type="submit" value="6">                               
+            <input class="cal_opration" name="symbol" type="submit" value="&plus;">                 
+            </div>  
+        <div class = "cal">     
+            <input class="cal_number" name="digit" type="submit" value="1">                                                          
+            <input class="cal_number" name="digit" type="submit" value="2">
+            <input class="cal_number" name="digit" type="submit" value="3">                                                                
+            <input class="cal_opration" name="symbol" type="submit" value="&times;">  
+        </div>  
+        <div class = "last">                                                                   
+            <input class="cal_number" name="digit" type="submit" value="0">                                                                    
+            <input class="cal_opration" name="symbol" type="submit" value="&equals;">
+            <input class="cal_opration" name="symbol" type="submit" value="&divide;">
+        </div>  
+        </form>
+    </div>
+        </body>
+</html>
